@@ -41,3 +41,25 @@ for i in range(n):
         break
 
 # Output: True
+
+#3. https://www.geeksforgeeks.org/dsa/find-a-triplet-that-sum-to-a-given-value/
+
+arr = [1, 4, 45, 6, 10, 8]
+t = 13
+n = len(arr)
+cnt = 0
+arr.sort() # [1,4,6,8,10,45]
+
+for i in range(n-2):
+    l = i+1
+    r = n-1
+    reqSum = t - arr[i]
+    while l < r:
+        if arr[l] + arr[r] == reqSum:
+            print("True")
+        if arr[l] + arr[r] < reqSum:
+            l = l+1
+        else:
+            r = r-1
+            
+# Output: True
