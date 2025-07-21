@@ -63,3 +63,25 @@ for i in range(n-2):
             r = r-1
             
 # Output: True
+
+# https://www.geeksforgeeks.org/dsa/find-the-longest-substring-with-k-unique-characters-in-a-given-string/
+
+# sample input:output
+# mlg ; 1 : 1
+# aaaa ; 2 : -1
+
+s = "aabacbebebe" 
+k = 3
+hs = set()
+cnt = -1
+
+for i in range(len(s)):
+    hs.clear()
+    for j in range(i,len(s)):
+        hs.add(s[j])
+        if len(hs) == k:
+            cnt = max(cnt, j-i+1)
+        
+        if len(hs) > k:
+            break
+print("Output: ",cnt)
