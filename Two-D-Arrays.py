@@ -1,3 +1,5 @@
+# ************* Transpose and 90 degree Rotate Matrix *************
+
 arr = [[1,2,3],[4,5,6],[7,8,9]]
 
 # with external variable
@@ -21,7 +23,7 @@ for i in range(len(arr)):
 
 print(arr)
 
-# Spiral Matrix
+# ************* Spiral Matrix *************
 
 a= [[1,  2,  3,  4],
     [5,  6,  7,  8],
@@ -58,3 +60,32 @@ while left<=right and top<=right:
 
 print(res)
     
+# *************  Set Matrix Zeros *************
+
+arr = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+
+rows, cols = set(), set()
+
+for r in range(len(arr)):
+    for c in range(len(arr[r])):
+        if arr[r][c] == 0:
+            rows.add(r)
+            cols.add(c)
+
+for r in range(len(arr)):
+    for c in range(len(arr[r])):
+        if r in rows or c in cols:
+            arr[r][c] = 0
+
+print(arr)
+
+# *************  Matrix Multiplication *************
+
+import numpy as np 
+
+a = [[1, 2], [3, 4]]
+b = [[5, 6], [7, 8]]
+
+m = np.dot(a,b)
+
+print(m)
